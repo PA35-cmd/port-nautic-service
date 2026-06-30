@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Port Nautic Service – Port à sec, Mécanique, Carénage à Agde</title>
+<meta name="description" content="Port Nautic Service à Agde : port à sec, mécanique, carénage, stockage de bateaux. Plus de 20 ans d'expérience. L'expertise à sec, la performance en mer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0D1B2A;
+    --blue:#1E3A8A;
+    --cyan:#00B4D8;
+    --grey:#F4F6F8;
+    --white:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Open Sans',sans-serif;color:var(--navy);background:var(--white);line-height:1.6;}
+  h1,h2,h3,h4{font-family:'Montserrat',sans-serif;font-weight:700;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+
+  /* HEADER */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:var(--white);
+    box-shadow:0 2px 10px rgba(13,27,42,0.08);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 24px;max-width:1300px;margin:0 auto;
+  }
+  .logo{display:flex;align-items:center;gap:10px;}
+  .logo img{height:48px;width:auto;}
+  .logo-text{font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;color:var(--navy);line-height:1.1;}
+  .logo-text span{display:block;font-size:10px;font-weight:600;color:var(--blue);letter-spacing:.5px;}
+  nav{display:flex;gap:32px;}
+  nav a{font-family:'Montserrat',sans-serif;font-weight:600;font-size:14px;color:var(--navy);
+        padding:8px 0;border-bottom:2px solid transparent;transition:.2s;}
+  nav a:hover, nav a.active{color:var(--cyan);border-bottom-color:var(--cyan);}
+  .header-cta{
+    display:flex;align-items:center;gap:8px;
+    border:2px solid var(--navy);border-radius:8px;
+    padding:10px 18px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;
+    transition:.2s;white-space:nowrap;
+  }
+  .header-cta:hover{background:var(--navy);color:var(--white);}
+  .burger{display:none;background:none;border:none;cursor:pointer;}
+  .burger span{display:block;width:26px;height:3px;background:var(--navy);margin:5px 0;border-radius:2px;}
+
+  /* HERO */
+  .hero{position:relative;background:var(--white);overflow:hidden;}
+  .hero-grid{
+    display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;
+    max-width:1300px;margin:0 auto;padding:60px 24px 120px;
+  }
+  .hero h1{font-size:42px;line-height:1.15;color:var(--navy);margin-bottom:18px;}
+  .hero h1 .accent{color:var(--cyan);}
+  .hero p{font-size:17px;color:#3c4a5c;margin-bottom:30px;max-width:480px;}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;
+    padding:15px 28px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;
+    transition:.2s;border:2px solid transparent;cursor:pointer;
+  }
+  .btn-primary{background:var(--navy);color:var(--white);}
+  .btn-primary:hover{background:var(--blue);}
+  .btn-outline{border-color:var(--cyan);color:var(--navy);background:var(--white);}
+  .btn-outline:hover{background:var(--cyan);color:var(--white);}
+  .hero-img{border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(13,27,42,.25);}
+  .hero-img img{width:100%;height:420px;object-fit:cover;}
+
+  .hero-wave{
+    position:relative;background:var(--navy);
+    margin-top:-70px;
+    clip-path:ellipse(75% 100% at 50% 0%);
+    padding-top:90px;
+  }
+  .hero-features{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    max-width:1100px;margin:0 auto;padding:0 24px 50px;gap:30px;
+  }
+  .hero-feature{display:flex;gap:14px;align-items:flex-start;color:var(--white);}
+  .hero-feature .icon{
+    width:46px;height:46px;border-radius:10px;background:rgba(0,180,216,.18);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    font-size:22px;
+  }
+  .hero-feature h4{font-size:15px;margin-bottom:4px;}
+  .hero-feature p{font-size:13px;color:#c4cdda;margin:0;}
+
+  /* SECTION HEADINGS */
+  .section{padding:80px 0;}
+  .section.alt{background:var(--grey);}
+  .section-head{text-align:center;margin-bottom:50px;}
+  .eyebrow{
+    font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;
+    color:var(--cyan);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;display:block;
+  }
+  .section-head h2{font-size:32px;color:var(--navy);position:relative;display:inline-block;}
+  .section-head h2::after{
+    content:'';display:block;width:60px;height:4px;background:var(--cyan);
+    margin:14px auto 0;border-radius:2px;
+  }
+
+  /* SERVICES */
+  .services-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+  }
+  .service-card{
+    background:var(--white);border-radius:14px;overflow:hidden;
+    box-shadow:0 8px 24px rgba(13,27,42,.08);transition:.25s;
+    display:flex;flex-direction:column;
+  }
+  .service-card:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(13,27,42,.14);}
+  .service-img{height:170px;width:100%;object-fit:cover;}
+  .service-img.placeholder{
+    height:170px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--navy),var(--blue));
+    color:#9fb3cc;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:1px;text-transform:uppercase;text-align:center;padding:10px;
+  }
+  .service-body{padding:24px;flex:1;display:flex;flex-direction:column;}
+  .service-icon{font-size:30px;margin-bottom:12px;}
+  .service-body h3{font-size:18px;color:var(--navy);margin-bottom:8px;}
+  .service-body p{font-size:14px;color:#5a6b80;}
+
+  /* A PROPOS */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .about-img{border-radius:14px;overflow:hidden;box-shadow:0 20px 40px rgba(13,27,42,.15);}
+  .about-img img{height:440px;object-fit:cover;width:100%;}
+  .about-text .eyebrow{display:block;}
+  .about-text h2{font-size:30px;margin-bottom:20px;}
+  .about-text p{color:#3c4a5c;margin-bottom:16px;font-size:15.5px;}
+  .stats-row{display:flex;gap:36px;margin-top:30px;}
+  .stat strong{display:block;font-family:'Montserrat',sans-serif;font-size:30px;color:var(--blue);}
+  .stat span{font-size:13px;color:#5a6b80;}
+
+  /* REALISATIONS */
+  .gallery-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+  }
+  .gallery-item{border-radius:12px;overflow:hidden;aspect-ratio:1/1;position:relative;cursor:pointer;}
+  .gallery-item img{width:100%;height:100%;object-fit:cover;transition:.3s;}
+  .gallery-item:hover img{transform:scale(1.07);}
+  .gallery-item.placeholder{
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--navy),var(--blue));
+    color:#9fb3cc;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;
+    text-align:center;padding:10px;letter-spacing:.5px;text-transform:uppercase;
+  }
+
+  /* HORAIRES */
+  .hours-wrap{
+    background:var(--navy);border-radius:18px;padding:50px;color:var(--white);
+  }
+  .hours-note{
+    background:rgba(0,180,216,.15);border:1px solid rgba(0,180,216,.4);
+    border-radius:10px;padding:14px 20px;margin-bottom:36px;
+    font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;
+    text-align:center;color:var(--cyan);
+  }
+  .hours-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .hours-card{background:rgba(255,255,255,.05);border-radius:12px;padding:20px;}
+  .hours-card h4{font-family:'Montserrat',sans-serif;font-size:14px;color:var(--cyan);margin-bottom:10px;letter-spacing:.5px;text-transform:uppercase;}
+  .hours-card p{font-size:13.5px;color:#dbe3ee;margin-bottom:4px;}
+  .hours-card .closed{color:#9fb3cc;font-style:italic;font-size:12.5px;margin-top:6px;}
+  .hours-footer{text-align:center;margin-top:34px;font-size:13px;color:#9fb3cc;}
+
+  /* CONTACT / FOOTER BAND */
+  .contact-band{background:var(--navy);color:var(--white);padding:70px 0;}
+  .contact-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr 1.2fr;gap:40px;}
+  .contact-grid h4{font-size:13px;color:var(--cyan);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;}
+  .why-list{list-style:none;}
+  .why-list li{font-size:14px;margin-bottom:10px;padding-left:22px;position:relative;color:#dbe3ee;}
+  .why-list li::before{content:'✓';position:absolute;left:0;color:var(--cyan);font-weight:700;}
+  .review{margin-bottom:18px;font-size:13.5px;color:#dbe3ee;}
+  .review .stars{color:#FFC857;margin-bottom:4px;}
+  .review cite{display:block;margin-top:4px;color:#9fb3cc;font-style:normal;font-size:12.5px;}
+  .contact-info p{font-size:14px;color:#dbe3ee;margin-bottom:14px;display:flex;gap:10px;}
+  .contact-cta{
+    display:inline-flex;align-items:center;gap:10px;background:var(--cyan);color:var(--navy);
+    font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;
+    padding:14px 26px;border-radius:8px;margin-top:10px;transition:.2s;
+  }
+  .contact-cta:hover{background:var(--white);}
+  .map-frame{border-radius:10px;overflow:hidden;margin-top:14px;border:0;width:100%;height:160px;filter:grayscale(.2);}
+
+  footer{background:#081320;color:#8b9bb0;padding:24px 0;font-size:13px;}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+  .footer-inner a{color:#8b9bb0;}
+  .footer-inner a:hover{color:var(--cyan);}
+
+  /* MOBILE */
+  @media(max-width:900px){
+    nav{position:fixed;top:72px;left:0;right:0;background:var(--white);flex-direction:column;
+        padding:20px 24px;gap:18px;box-shadow:0 10px 20px rgba(0,0,0,.1);display:none;}
+    nav.open{display:flex;}
+    .burger{display:block;}
+    .header-cta span.label{display:none;}
+    .hero-grid{grid-template-columns:1fr;padding-bottom:90px;}
+    .hero h1{font-size:32px;}
+    .hero-features{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:1fr 1fr;}
+    .hours-grid{grid-template-columns:1fr 1fr;}
+    .contact-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:560px){
+    .services-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:1fr 1fr;}
+    .hours-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .hours-wrap{padding:30px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#accueil" class="logo">
+      <img src="images/logo_icon.png" alt="Port Nautic Service" style="height:44px;width:auto;object-fit:contain;">
+      <div class="logo-text">PORT NAUTIC<span>SERVICE</span></div>
+    </a>
+    <nav id="nav">
+      <a href="#accueil" class="active">Accueil</a>
+      <a href="#services">Nos Services</a>
+      <a href="#stockage">Stockage</a>
+      <a href="#apropos">À propos</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="tel:0467943892" class="header-cta">📞 <span class="label">04 67 94 38 92</span></a>
+    <button class="burger" onclick="document.getElementById('nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="accueil">
+  <div class="hero-grid">
+    <div>
+      <h1>VOTRE PARTENAIRE<br>DE CONFIANCE POUR<br>VOS <span class="accent">BATEAUX</span></h1>
+      <p>Port à sec, maintenance, mécanique et stockage à Agde, au service de votre tranquillité.</p>
+      <div class="btn-row">
+        <a href="#services" class="btn btn-primary">Nos Services</a>
+        <a href="tel:0467943892" class="btn btn-outline">Nous contacter</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="images/yard.jpeg" alt="Parc à bateaux Port Nautic Service à Agde">
+    </div>
+  </div>
+  <div class="hero-wave">
+    <div class="hero-features">
+      <div class="hero-feature">
+        <div class="icon">⚓</div>
+        <div><h4>Port à sec sécurisé</h4><p>Un parc à bateaux moderne et surveillé</p></div>
+      </div>
+      <div class="hero-feature">
+        <div class="icon">🔧</div>
+        <div><h4>Expertise technique</h4><p>Une équipe qualifiée à votre service</p></div>
+      </div>
+      <div class="hero-feature">
+        <div class="icon">🛡️</div>
+        <div><h4>Entretien complet</h4><p>Pour des bateaux performants et durables</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Notre savoir-faire</span>
+      <h2>Nos Services</h2>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <img class="service-img" src="images/yard.jpeg" alt="Port à sec">
+        <div class="service-body">
+          <div class="service-icon">⚓</div>
+          <h3>Port à sec</h3>
+          <p>Mise à sec sécurisée dans notre parc à bateaux.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img" src="images/engine.jpeg" alt="Mécanique bateau">
+        <div class="service-body">
+          <div class="service-icon">🔧</div>
+          <h3>Mécanique</h3>
+          <p>Entretien et réparation de moteurs toutes marques.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img" src="images/carenage.jpeg" alt="Carénage coque bateau antifouling">
+        <div class="service-body">
+          <div class="service-icon">🌊</div>
+          <h3>Carénage</h3>
+          <p>Nettoyage, traitement de coque et protection antifouling.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img" src="images/forklifts.jpeg" alt="Stockage bateaux">
+        <div class="service-body">
+          <div class="service-icon">📦</div>
+          <h3>Stockage</h3>
+          <p>Stockage à différentes périodes, courte ou longue durée.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img" src="images/diagnostic.jpeg" alt="Diagnostic électronique bateau">
+        <div class="service-body">
+          <div class="service-icon">🖥️</div>
+          <h3>Diagnostic</h3>
+          <p>Diagnostic complet et conseils personnalisés pour votre bateau.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img" src="images/remise_eau.jpeg" alt="Remise à l'eau bateau">
+        <div class="service-body">
+          <div class="service-icon">🚤</div>
+          <h3>Remise à l'eau</h3>
+          <p>Mise à l'eau de votre bateau en toute sécurité, sur rendez-vous.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="apropos">
+  <div class="container about-grid">
+    <div class="about-img">
+      <img src="images/yard.jpeg" alt="Port Nautic Service à Agde">
+    </div>
+    <div class="about-text">
+      <span class="eyebrow">À propos de nous</span>
+      <h2>L'expertise à sec,<br>la performance en mer.</h2>
+      <p>Implanté au bord de l'Hérault à Agde, Port Nautic Service accompagne depuis plus de 20 ans les propriétaires de bateaux dans l'entretien, le stockage et la remise en état de leur embarcation.</p>
+      <p>Notre équipe qualifiée intervient sur toutes marques, du port à sec à la mécanique en passant par le carénage, avec un même objectif : la tranquillité d'esprit de nos clients et la longévité de leur bateau.</p>
+      <p>Équipements modernes, parc à bateaux surveillé et service réactif : nous mettons notre savoir-faire au service de votre passion nautique, été comme hiver.</p>
+      <div class="stats-row">
+        <div class="stat"><strong>20+</strong><span>Ans d'expérience</span></div>
+        <div class="stat"><strong>100%</strong><span>Toutes marques</span></div>
+        <div class="stat"><strong>7j/7</strong><span>En haute saison</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="realisations">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Notre travail</span>
+      <h2>Réalisations</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/yard.jpeg" alt="Parc à bateaux"></div>
+      <div class="gallery-item"><img src="images/forklifts.jpeg" alt="Chariots élévateurs Hyster"></div>
+      <div class="gallery-item"><img src="images/engine.jpeg" alt="Révision moteur"></div>
+      <div class="gallery-item"><img src="images/diagnostic.jpeg" alt="Diagnostic électronique bateau"></div>
+      <div class="gallery-item"><img src="images/remise_eau.jpeg" alt="Remise à l'eau"></div>
+      <div class="gallery-item"><img src="images/carenage.jpeg" alt="Carénage coque bateau"></div>
+      <div class="gallery-item placeholder">Photo à venir</div>
+      <div class="gallery-item placeholder">Photo à venir</div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="horaires">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Quand venir</span>
+      <h2>Nos Horaires</h2>
+    </div>
+    <div class="hours-wrap">
+      <div class="hours-note">⚠️ Congé annuel du 20 décembre au 11 janvier</div>
+      <div class="hours-grid">
+        <div class="hours-card">
+          <h4>Janvier</h4>
+          <p>9h00–12h00</p>
+          <p>14h00–17h00</p>
+        </div>
+        <div class="hours-card">
+          <h4>Février</h4>
+          <p>9h00–12h00</p>
+          <p>14h00–17h00</p>
+          <p class="closed">Fermé dimanche et lundi</p>
+        </div>
+        <div class="hours-card">
+          <h4>Mars</h4>
+          <p>9h00–12h00</p>
+          <p>14h00–17h30</p>
+          <p class="closed">Fermé dimanche</p>
+        </div>
+        <div class="hours-card">
+          <h4>Avril</h4>
+          <p>9h00–12h00</p>
+          <p>14h00–17h30</p>
+          <p class="closed">Fermé dimanche jusqu'au 15 avril</p>
+        </div>
+        <div class="hours-card">
+          <h4>Mai</h4>
+          <p>8h30–12h00</p>
+          <p>14h00–18h00</p>
+          <p class="closed">Ouvert tous les jours à partir du 15 avril</p>
+        </div>
+        <div class="hours-card">
+          <h4>Juin</h4>
+          <p>8h00–12h00</p>
+          <p>14h00–19h00</p>
+          <p class="closed">Ouvert tous les jours</p>
+        </div>
+        <div class="hours-card">
+          <h4>Juillet / Août</h4>
+          <p>7h30–12h30</p>
+          <p>13h30–20h00</p>
+          <p class="closed">Ouvert tous les jours</p>
+        </div>
+        <div class="hours-card">
+          <h4>Septembre</h4>
+          <p>8h00–12h00</p>
+          <p>14h00–18h30</p>
+          <p class="closed">Ouvert tous les jours</p>
+        </div>
+        <div class="hours-card">
+          <h4>Octobre</h4>
+          <p>8h30–12h00</p>
+          <p>14h00–18h00</p>
+          <p class="closed">Fermé dimanche à partir du 15 octobre</p>
+        </div>
+        <div class="hours-card">
+          <h4>Novembre / Décembre</h4>
+          <p>9h00–12h00</p>
+          <p>14h00–17h00</p>
+          <p class="closed">Fermé dimanche, jours fériés et lundi à partir du 15 novembre</p>
+        </div>
+      </div>
+      <p class="hours-footer">Dernière manutention : 15 minutes avant la fermeture.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact-band" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <h4>Pourquoi nous choisir ?</h4>
+      <ul class="why-list">
+        <li>Plus de 20 ans d'expérience</li>
+        <li>Équipements modernes</li>
+        <li>Équipe qualifiée et passionnée</li>
+        <li>Service rapide et fiable</li>
+        <li>Satisfaction client garantie</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Avis clients</h4>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        "Service au top ! Équipe professionnelle et à l'écoute. Mon bateau est entre de bonnes mains."
+        <cite>— Jean M.</cite>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        "Excellent accueil et travail impeccable. Je recommande Port Nautic Service les yeux fermés."
+        <cite>— Sophie L.</cite>
+      </div>
+    </div>
+    <div class="contact-info">
+      <h4>Nous trouver</h4>
+      <p>📍 Route du Grau (Bord de l'Hérault)<br>&nbsp;&nbsp;&nbsp;34300 Agde</p>
+      <p>📞 <a href="tel:0467943892">04 67 94 38 92</a></p>
+      <p>✉️ <a href="mailto:port-nautic@orange.fr">port-nautic@orange.fr</a></p>
+      <iframe class="map-frame" loading="lazy" src="https://www.google.com/maps?q=Route+du+Grau,+34300+Agde&output=embed"></iframe>
+    </div>
+    <div>
+      <h4>Nous contacter</h4>
+      <p style="color:#dbe3ee;font-size:14px;margin-bottom:20px;">Une question, un devis, un rendez-vous ? Appelez-nous ou écrivez-nous directement.</p>
+      <a href="tel:0467943892" class="contact-cta">📞 Appeler maintenant</a><br>
+      <img src="images/logo_icon.png" alt="Port Nautic Service" style="height:60px;width:auto;object-fit:contain;margin-top:18px;background:#fff;border-radius:8px;padding:8px;">
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div>© 2026 Port Nautic Service — Port à sec, Parc à Bateaux, Mécanique, Carénage</div>
+    <div>nannidiesel · FRANCE HELICE · <a href="tel:0467943892">04 67 94 38 92</a> · <a href="#">Mentions légales</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
